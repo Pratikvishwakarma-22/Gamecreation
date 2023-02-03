@@ -10,7 +10,7 @@ body {
     place-items: center;
 }
 
-#container {
+.container {
     width: 1200px;
     height: 400px;
     position: relative;
