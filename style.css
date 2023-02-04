@@ -96,3 +96,26 @@ body {
     right: 0px;
   }
 }
+
+.cloud {
+  position: absolute;
+  top: 20%;
+}
+
+.cloud img {
+  height: 120px;
+  width: 2910px;
+}
+
+.animatecloud {
+  animation: cloudanimation 10s linear infinite;
+}
+
+@keyframes cloudanimation {
+  0% {
+    right: -1500px;
+  }
+  100% {
+    right: 0px;
+  }
+}

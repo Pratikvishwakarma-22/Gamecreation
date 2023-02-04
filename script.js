@@ -1,6 +1,7 @@
 let dino = document.querySelector("#dino");
 let block = document.querySelector(".block");
 let road = document.querySelector(".road");
+let cloud = document.querySelector(".cloud");
 
 //dino jumping code
 window.addEventListener("keydown", (e) => {
@@ -21,6 +22,7 @@ window.addEventListener("keydown", (eve) => {
     if (!block.classList.contains("animateblock")) {
       block.classList.add("animateblock");
       road.classList.add("animateroad");
+      cloud.classList.add("animatecloud");
     }
   }
 });
