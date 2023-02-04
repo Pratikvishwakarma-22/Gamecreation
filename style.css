@@ -46,3 +46,31 @@ body {
     bottom: 200px;
   }
 }
+
+.block {
+  height: 85px;
+  width: 120px;
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  z-index: 1;
+}
+
+.block img {
+  height: 85px;
+  width: 120px;
+}
+
+.animateblock {
+  animation: blockanimation 2.5s linear infinite;
+}
+
+@keyframes blockanimation {
+  0% {
+    right: -10%;
+  }
+  100% {
+    right: 110%;
+  }
+}
+
