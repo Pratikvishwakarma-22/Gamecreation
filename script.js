@@ -13,3 +13,13 @@ window.addEventListener("keydown", (e) => {
     }
   }
 });
+
+//block animation and starting of game
+window.addEventListener("keydown", (eve) => {
+    if (eve.code == "Space") {
+      if (!block.classList.contains("animateblock")) {
+        block.classList.add("animateblock");
+      }
+    }
+  });
+  
