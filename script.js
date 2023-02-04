@@ -2,7 +2,13 @@ let dino = document.querySelector("#dino");
 let block = document.querySelector(".block");
 let road = document.querySelector(".road");
 let cloud = document.querySelector(".cloud");
+let score = document.querySelector(".score");
 
+let playerScore = 0;
+function scorenum() {
+  playerScore++;
+  score.innerHTML = `Score <b>${playerScore}</b>`;
+}
 //dino jumping code
 window.addEventListener("keydown", (e) => {
   if (e.key == "ArrowUp") {
@@ -23,6 +29,7 @@ window.addEventListener("keydown", (eve) => {
       block.classList.add("animateblock");
       road.classList.add("animateroad");
       cloud.classList.add("animatecloud");
+      score_interval = setInterval(scorenum, 200);
     }
   }
 });
