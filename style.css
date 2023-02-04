@@ -74,3 +74,25 @@ body {
   }
 }
 
+.road {
+  position: absolute;
+  bottom: 0%;
+}
+
+.road img {
+  height: 30px;
+  width: 3000px;
+}
+
+.animateroad {
+  animation: roadanimation 3.5s linear infinite;
+}
+
+@keyframes roadanimation {
+  0% {
+    right: -1500px;
+  }
+  100% {
+    right: 0px;
+  }
+}
