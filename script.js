@@ -1,5 +1,6 @@
 let dino = document.querySelector("#dino");
 let block = document.querySelector(".block");
+let road = document.querySelector(".road");
 
 //dino jumping code
 window.addEventListener("keydown", (e) => {
@@ -16,10 +17,10 @@ window.addEventListener("keydown", (e) => {
 
 //block animation and starting of game
 window.addEventListener("keydown", (eve) => {
-    if (eve.code == "Space") {
-      if (!block.classList.contains("animateblock")) {
-        block.classList.add("animateblock");
-      }
+  if (eve.code == "Space") {
+    if (!block.classList.contains("animateblock")) {
+      block.classList.add("animateblock");
+      road.classList.add("animateroad");
     }
-  });
-  
+  }
+});
