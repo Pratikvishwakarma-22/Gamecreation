@@ -33,3 +33,16 @@ window.addEventListener("keydown", (eve) => {
     }
   }
 });
+
+setInterval(() => {
+  let blockleft = parseInt(getComputedStyle(block).getPropertyValue("left"));
+  let dinobottom = parseInt(getComputedStyle(dino).getPropertyValue("bottom"));
+  if (blockleft > -10 && blockleft < 110 && dinobottom < 110) {
+    block.classList.remove("animateblock");
+    road.classList.remove("animateroad");
+    cloud.classList.remove("animatecloud");
+    clearInterval(score_interval);
+    playerScore = 0;
+    document.querySelector(".gameover").innerHTML = "Game Over";
+  }
+}, 20);
