@@ -30,6 +30,7 @@ window.addEventListener("keydown", (eve) => {
       road.classList.add("animateroad");
       cloud.classList.add("animatecloud");
       score_interval = setInterval(scorenum, 200);
+      document.querySelector(".gameover").innerHTML = "";
     }
   }
 });
