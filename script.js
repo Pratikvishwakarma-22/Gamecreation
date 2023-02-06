@@ -3,12 +3,21 @@ let block = document.querySelector(".block");
 let road = document.querySelector(".road");
 let cloud = document.querySelector(".cloud");
 let score = document.querySelector(".score");
+let variable = document.querySelector(":root");
 
 let playerScore = 0;
 function scorenum() {
   playerScore++;
   score.innerHTML = `Score <b>${playerScore}</b>`;
+  if(playerScore>73){
+    variable_change();
+  }
 }
+
+function variable_change(){
+  variable.style.setProperty('--speed','1.6s');
+}
+
 //dino jumping code
 window.addEventListener("keydown", (e) => {
   if (e.key == "ArrowUp") {
@@ -27,6 +36,7 @@ window.addEventListener("keydown", (eve) => {
   if (eve.code == "Space") {
     if (!block.classList.contains("animateblock")) {
       block.classList.add("animateblock");
+      variable.style.setProperty('--speed','2.5s');
       road.classList.add("animateroad");
       cloud.classList.add("animatecloud");
       score_interval = setInterval(scorenum, 200);

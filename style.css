@@ -1,3 +1,7 @@
+:root {
+  --speed:2.5s;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -62,7 +66,7 @@ body {
 }
 
 .animateblock {
-  animation: blockanimation 2.5s linear infinite;
+  animation: blockanimation var(--speed) linear infinite;
 }
 
 @keyframes blockanimation {
