@@ -83,7 +83,7 @@ body {
   height: 70px;
   width: 100px;
   position: absolute;
-  bottom: 200px;
+  bottom: 250px;
   right: 350px;
   z-index: 1;
 }
@@ -102,7 +102,7 @@ body {
     right: -100%;
   }
   100% {
-    right: 200%;
+    right: 190%;
   }
 }
 

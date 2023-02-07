@@ -7,6 +7,19 @@ let score = document.querySelector(".score")
 let variable = document.querySelector(":root")
 let gameover = document.querySelector(".gameover")
 
+
+function findrandom(){
+  var nums = [1,1,1,1,1,1,1,0,0,0];
+  var randomnum = Math.floor(Math.random()*randomnum.length)
+  if(nums[randomnum] = 1){
+    bird.style.animation='none'
+  }
+  else{
+    block.style.animation0='none'
+  }
+}
+
+
 let playerScore = 0
 function scorenum() {
   playerScore++
@@ -17,8 +30,8 @@ function scorenum() {
 }
 
 function variable_change() {
-  variable.style.setProperty('--speed', '1.6s')
-  variable.style.setProperty('--speedbird ','6s')
+  variable.style.setProperty('--speed', '1.8s')
+  variable.style.setProperty('--speedbird','5s')
 }
 
 //dino jumping code
@@ -80,7 +93,12 @@ window.addEventListener("keydown", (eve) => {
 setInterval(() => {
   let blockleft = parseInt(getComputedStyle(block).getPropertyValue("left"))
   let dinobottom = parseInt(getComputedStyle(dino).getPropertyValue("bottom"))
-  if (blockleft > -60 && blockleft < 80 && dinobottom < 100) {
+  // let birdbottom = parseInt(getComputedStyle(bird).getPropertyValue("bottom"))
+  let birdleft = parseInt(getComputedStyle(bird).getPropertyValue("left"))
+
+  if (blockleft > -60 && blockleft < 80 && dinobottom < 100 ||
+      dinobottom > 150 && birdleft < 100 && birdleft > -70  
+      ) {
     block.style.animationPlayState = 'paused'
     road.style.animationPlayState = 'paused'
     cloud.style.animationPlayState = 'paused'
