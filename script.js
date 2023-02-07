@@ -1,5 +1,6 @@
 let dino = document.querySelector(".dino")
 let block = document.querySelector(".block")
+let bird = document.querySelector(".bird")
 let road = document.querySelector(".road")
 let cloud = document.querySelector(".cloud")
 let score = document.querySelector(".score")
@@ -17,6 +18,7 @@ function scorenum() {
 
 function variable_change() {
   variable.style.setProperty('--speed', '1.6s')
+  variable.style.setProperty('--speedbird ','6s')
 }
 
 //dino jumping code
@@ -28,6 +30,7 @@ window.addEventListener("keydown", (e) => {
       setTimeout(() => {
         dino.classList.remove("animatedino")
       }, 500)
+
     }
   }
 })
@@ -38,6 +41,8 @@ window.addEventListener("keydown", (eve) => {
     if (!block.classList.contains("animateblock")) {
       block.classList.add("animateblock")
       variable.style.setProperty('--speed', '2.5s')
+      bird.classList.add("animatebird")
+      variable.style.setProperty('--speedbird', '10s')
       road.classList.add("animateroad")
       cloud.classList.add("animatecloud")
       score_interval = setInterval(scorenum, 200)
@@ -47,18 +52,23 @@ window.addEventListener("keydown", (eve) => {
       block.classList.remove("animateblock")
       road.classList.remove("animateroad")
       cloud.classList.remove("animatecloud")
+      bird.classList.remove("animatebird")
 
       block.style.animationPlayState = 'running'
       road.style.animationPlayState = 'running'
       cloud.style.animationPlayState = 'running'
-
+      dino.style.animationPlayState = 'running'
+      bird.style.animationPlayState = 'running'
       playerScore = 0
+
       score.innerHTML = `Score <b>${playerScore}</b>`
       document.querySelector(".gameover").innerHTML = ""
       block.offsetWidth
 
       block.classList.add("animateblock")
       variable.style.setProperty('--speed', '2.5s')
+      bird.classList.add("animatebird")
+      variable.style.setProperty('--speedbird', '10s')
       road.classList.add("animateroad")
       cloud.classList.add("animatecloud")
       score_interval = setInterval(scorenum, 200)
@@ -74,7 +84,8 @@ setInterval(() => {
     block.style.animationPlayState = 'paused'
     road.style.animationPlayState = 'paused'
     cloud.style.animationPlayState = 'paused'
-
+    dino.style.animationPlayState = 'paused'
+    bird.style.animationPlayState = 'paused'
     clearInterval(score_interval)
     playerScore = 0
     document.querySelector(".gameover").innerHTML = "Game Over"
