@@ -49,9 +49,10 @@ setInterval(() => {
   let blockleft = parseInt(getComputedStyle(block).getPropertyValue("left"));
   let dinobottom = parseInt(getComputedStyle(dino).getPropertyValue("bottom"));
   if (blockleft>-60 && blockleft < 80 && dinobottom < 100 ) {
-    block.classList.remove("animateblock");
-    road.classList.remove("animateroad");
-    cloud.classList.remove("animatecloud");
+    block.style.animationPlayState = 'paused';
+    road.style.animationPlayState = 'paused';
+    cloud.style.animationPlayState = 'paused';
+    
     clearInterval(score_interval);
     playerScore = 0;
     document.querySelector(".gameover").innerHTML = "Game Over";
