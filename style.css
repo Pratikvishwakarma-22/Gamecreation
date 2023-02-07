@@ -1,5 +1,6 @@
 :root {
   --speed:2.5s;
+  --speedbird:10s
 }
 
 * {
@@ -74,6 +75,34 @@ body {
   }
   100% {
     right: 110%;
+  }
+}
+
+.bird {
+  background-color: red;
+  height: 70px;
+  width: 100px;
+  position: absolute;
+  bottom: 200px;
+  right: 350px;
+  z-index: 1;
+}
+
+.bird img {
+  height: 70px;
+  width: 100px;
+}
+
+.animatebird {
+  animation: birdanimation var(--speedbird) linear infinite;
+}
+
+@keyframes birdanimation {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 200%;
   }
 }
 
