@@ -21,7 +21,7 @@ body {
   overflow: hidden;
 }
 
-#dino {
+.dino {
   height: 70px;
   width: 70px;
   position: absolute;
@@ -30,7 +30,7 @@ body {
   z-index: 1;
 }
 
-#dino img {
+.dino img {
   height: 70px;
   width: 70px;
 }

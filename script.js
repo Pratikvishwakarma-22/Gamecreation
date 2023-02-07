@@ -1,4 +1,4 @@
-let dino = document.querySelector("#dino");
+let dino = document.querySelector(".dino");
 let block = document.querySelector(".block");
 let road = document.querySelector(".road");
 let cloud = document.querySelector(".cloud");
