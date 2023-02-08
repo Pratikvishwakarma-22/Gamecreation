@@ -80,10 +80,10 @@ body {
 
 .bird {
   height: 70px;
-  width: 100px;
+  width: 120px;
   position: absolute;
   bottom: 250px;
-  right: -100px;
+  right: -118px;
   z-index: 1;
 }
 
