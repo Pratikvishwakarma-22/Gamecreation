@@ -87,7 +87,7 @@ setInterval(() => {
 
   if (
     (blockleft > -60 && blockleft < 80 && dinobottom < 100) ||
-    (dinobottom > 165 && birdleft < 100 && birdleft > -70)
+    (dinobottom > 50 && dinobottom < 120 && birdleft < 100 && birdleft > -70)
   ) {
     block.style.animationPlayState = "paused";
     road.style.animationPlayState = "paused";
