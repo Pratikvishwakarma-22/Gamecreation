@@ -16,12 +16,10 @@ function findrandom() {
   if (nums[randomnum] == 1) {
     block.classList.add("animateblock")
     bird.classList.remove("animatebird")
-    bird.offsetWidth
   }
   else {
     bird.classList.add("animatebird")
     block.classList.remove("animateblock")
-    block.offsetWidth
   }
 }
 
