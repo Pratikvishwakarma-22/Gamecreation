@@ -85,7 +85,7 @@ setInterval(() => {
   let birdleft = parseInt(getComputedStyle(bird).getPropertyValue("left"))
 
   if (blockleft > -60 && blockleft < 80 && dinobottom < 100 ||
-    dinobottom > 150 && birdleft < 100 && birdleft > -70
+    dinobottom > 165 && birdleft < 100 && birdleft > -70
   ) {
     block.style.animationPlayState = 'paused'
     road.style.animationPlayState = 'paused'
