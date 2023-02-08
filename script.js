@@ -28,7 +28,6 @@ function scorenum() {
   playerScore++
   score.innerHTML = `Score <b>${playerScore}</b>`
 }
-
 //dino jumping code
 window.addEventListener("keydown", (e) => {
   if (e.key == "ArrowUp") {
@@ -54,7 +53,8 @@ window.addEventListener("keydown", (eve) => {
       block_interval = setInterval(findrandom, 2500)
       score_interval = setInterval(scorenum, 200)
       document.querySelector(".gameover").innerHTML = ""
-    } else if (gameover.innerHTML == "Game Over") {
+    }
+    else if (gameover.innerHTML == "Game Over") {
       block.classList.remove("animateblock")
       road.classList.remove("animateroad")
       cloud.classList.remove("animatecloud")
@@ -71,6 +71,7 @@ window.addEventListener("keydown", (eve) => {
       document.querySelector(".gameover").innerHTML = ""
       road.classList.add("animateroad")
       cloud.classList.add("animatecloud")
+
       block_interval = setInterval(findrandom, 2500)
       score_interval = setInterval(scorenum, 200)
     }
@@ -90,8 +91,10 @@ setInterval(() => {
     cloud.style.animationPlayState = 'paused'
     dino.style.animationPlayState = 'paused'
     bird.style.animationPlayState = 'paused'
+
     clearInterval(block_interval)
     clearInterval(score_interval)
+
     playerScore = 0
     document.querySelector(".gameover").innerHTML = "Game Over"
   }
