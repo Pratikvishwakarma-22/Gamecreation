@@ -1,6 +1,6 @@
 :root {
-  --speed:2.5s;
-  --speedbird:2.5s
+  --speed: 2.5s;
+  --speedbird: 2.5s;
 }
 
 * {
@@ -135,19 +135,19 @@ body {
 
 .cloud img {
   height: 120px;
-  width: 2910px;
+  width: 2500px;
 }
 
 .animatecloud {
-  animation: cloudanimation 10s linear infinite;
+  animation: cloudanimation 17s linear infinite;
 }
 
 @keyframes cloudanimation {
   0% {
-    right: -1500px;
+    right: -2600px;
   }
   100% {
-    right: 0px;
+    right: 2000px;
   }
 }
 
