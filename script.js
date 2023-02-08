@@ -7,6 +7,7 @@ let score = document.querySelector(".score")
 let variable = document.querySelector(":root")
 let gameover = document.querySelector(".gameover")
 
+var interval = 2500
 
 function findrandom() {
   var nums = [1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
@@ -50,7 +51,7 @@ window.addEventListener("keydown", (eve) => {
       count++
       road.classList.add("animateroad")
       cloud.classList.add("animatecloud")
-      block_interval = setInterval(findrandom, 2500)
+      block_interval = setInterval(findrandom, interval)
       score_interval = setInterval(scorenum, 200)
       document.querySelector(".gameover").innerHTML = ""
     }
@@ -72,7 +73,7 @@ window.addEventListener("keydown", (eve) => {
       road.classList.add("animateroad")
       cloud.classList.add("animatecloud")
 
-      block_interval = setInterval(findrandom, 2500)
+      block_interval = setInterval(findrandom,interval)
       score_interval = setInterval(scorenum, 200)
     }
   }
