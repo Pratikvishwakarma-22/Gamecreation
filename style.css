@@ -47,7 +47,7 @@ body {
   }
   45%,
   55% {
-    bottom: 220px;
+    bottom: 230px;
   }
 }
 
@@ -82,7 +82,7 @@ body {
   height: 70px;
   width: 120px;
   position: absolute;
-  bottom: 250px;
+  bottom: 120px;
   right: -118px;
   z-index: 1;
 }
