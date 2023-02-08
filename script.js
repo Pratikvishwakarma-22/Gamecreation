@@ -8,30 +8,27 @@ let variable = document.querySelector(":root")
 let gameover = document.querySelector(".gameover")
 
 
-function findrandom(){
-  var nums = [1,1,1,1,1,1,1,0,0,0];
-  var randomnum = Math.floor(Math.random()*randomnum.length)
-  if(nums[randomnum] = 1){
-    bird.style.animation='none'
+function findrandom() {
+  var nums = [1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
+  var randomnum = Math.floor(Math.random() * nums.length)
+  console.log(randomnum)
+  console.log(nums[randomnum])
+  if (nums[randomnum] == 1) {
+    block.classList.add("animateblock")
+    bird.classList.remove("animatebird")
+    bird.offsetWidth
   }
-  else{
-    block.style.animation0='none'
+  else {
+    bird.classList.add("animatebird")
+    block.classList.remove("animateblock")
+    block.offsetWidth
   }
 }
-
 
 let playerScore = 0
 function scorenum() {
   playerScore++
   score.innerHTML = `Score <b>${playerScore}</b>`
-  if (playerScore > 73) {
-    variable_change()
-  }
-}
-
-function variable_change() {
-  variable.style.setProperty('--speed', '1.8s')
-  variable.style.setProperty('--speedbird','5s')
 }
 
 //dino jumping code
@@ -43,25 +40,23 @@ window.addEventListener("keydown", (e) => {
       setTimeout(() => {
         dino.classList.remove("animatedino")
       }, 500)
-
     }
   }
 })
 
 //block animation and starting of game
+var count = 0
 window.addEventListener("keydown", (eve) => {
   if (eve.code == "Space") {
-    if (!block.classList.contains("animateblock")) {
-      block.classList.add("animateblock")
-      variable.style.setProperty('--speed', '2.5s')
-      bird.classList.add("animatebird")
-      variable.style.setProperty('--speedbird', '10s')
+    if (!block.classList.contains("animateblock") && !bird.classList.contains("animatebird") && count < 1) {
+      console.log("donot come here")
+      count++
       road.classList.add("animateroad")
       cloud.classList.add("animatecloud")
+      block_interval = setInterval(findrandom, 2500)
       score_interval = setInterval(scorenum, 200)
       document.querySelector(".gameover").innerHTML = ""
     } else if (gameover.innerHTML == "Game Over") {
-      console.log("is it working")
       block.classList.remove("animateblock")
       road.classList.remove("animateroad")
       cloud.classList.remove("animatecloud")
@@ -76,16 +71,10 @@ window.addEventListener("keydown", (eve) => {
 
       score.innerHTML = `Score <b>${playerScore}</b>`
       document.querySelector(".gameover").innerHTML = ""
-      block.offsetWidth
-
-      block.classList.add("animateblock")
-      variable.style.setProperty('--speed', '2.5s')
-      bird.classList.add("animatebird")
-      variable.style.setProperty('--speedbird', '10s')
       road.classList.add("animateroad")
       cloud.classList.add("animatecloud")
+      block_interval = setInterval(findrandom, 2500)
       score_interval = setInterval(scorenum, 200)
-
     }
   }
 })
@@ -93,17 +82,17 @@ window.addEventListener("keydown", (eve) => {
 setInterval(() => {
   let blockleft = parseInt(getComputedStyle(block).getPropertyValue("left"))
   let dinobottom = parseInt(getComputedStyle(dino).getPropertyValue("bottom"))
-  // let birdbottom = parseInt(getComputedStyle(bird).getPropertyValue("bottom"))
   let birdleft = parseInt(getComputedStyle(bird).getPropertyValue("left"))
 
   if (blockleft > -60 && blockleft < 80 && dinobottom < 100 ||
-      dinobottom > 150 && birdleft < 100 && birdleft > -70  
-      ) {
+    dinobottom > 150 && birdleft < 100 && birdleft > -70
+  ) {
     block.style.animationPlayState = 'paused'
     road.style.animationPlayState = 'paused'
     cloud.style.animationPlayState = 'paused'
     dino.style.animationPlayState = 'paused'
     bird.style.animationPlayState = 'paused'
+    clearInterval(block_interval)
     clearInterval(score_interval)
     playerScore = 0
     document.querySelector(".gameover").innerHTML = "Game Over"
