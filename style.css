@@ -47,7 +47,7 @@ body {
   }
   45%,
   55% {
-    bottom: 200px;
+    bottom: 220px;
   }
 }
 
@@ -131,4 +131,14 @@ body {
   right: 10px;
   top: 10px;
   font-size: 1.5em;
+}
+
+.gameover {
+  height: 110px;
+  width: 35%;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  text-align: center;
+  font-size: 5em;
 }
