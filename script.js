@@ -1,17 +1,17 @@
-let dino = document.querySelector(".dino");
-let block = document.querySelector(".block");
-let bird = document.querySelector(".bird");
-let road = document.querySelector(".road");
-let cloud = document.querySelector(".cloud");
-let score = document.querySelector(".score");
-let variable = document.querySelector(":root");
-let gameover = document.querySelector(".gameover");
+const dino = document.querySelector(".dino");
+const block = document.querySelector(".block");
+const bird = document.querySelector(".bird");
+const road = document.querySelector(".road");
+const cloud = document.querySelector(".cloud");
+const score = document.querySelector(".score");
+const variable = document.querySelector(":root");
+const gameover = document.querySelector(".gameover");
 
-var interval = 1100;
+let interval = 1100;
 
 function findrandom() {
-  var nums = [1, 1, 1, 1, 1, 1, 1, 0, 0, 0];
-  var randomnum = Math.floor(Math.random() * nums.length);
+  const nums = [1, 1, 1, 1, 1, 1, 1, 0, 0, 0];
+  let randomnum = Math.floor(Math.random() * nums.length);
   console.log(randomnum);
   console.log(nums[randomnum]);
   if (nums[randomnum] == 1) {
@@ -42,7 +42,7 @@ window.addEventListener("keydown", (e) => {
 });
 
 //block animation and starting of game
-var count = 0;
+let count = 0;
 window.addEventListener("keydown", (eve) => {
   if (eve.code == "Space") {
     if (
@@ -87,7 +87,7 @@ setInterval(() => {
 
   if (
     (blockleft > -60 && blockleft < 80 && dinobottom < 100) ||
-    (dinobottom > 50 && dinobottom < 120 && birdleft < 100 && birdleft > -70)
+    (dinobottom > 50 && dinobottom > 120 && birdleft < 100 && birdleft > -70)
   ) {
     block.style.animationPlayState = "paused";
     road.style.animationPlayState = "paused";
