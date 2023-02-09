@@ -1,47 +1,98 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: grid;
-    height: 100vh;
-    place-items: center;
+  display: grid;
+  height: 100vh;
+  place-items: center;
 }
 
 .container {
-    width: 1200px;
-    height: 400px;
-    position: relative;
-    overflow: hidden;
+  width: 1200px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  background-color: antiquewhite;
 }
 
 #dino {
-    height: 70px;
-    width: 70px;
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
-    z-index: 1;
+  height: 70px;
+  width: 70px;
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  z-index: 1;
 }
 
 #dino img {
-    height: 70px;
-    width: 70px;
+  height: 70px;
+  width: 70px;
 }
 
 .animatedino {
-    animation: dinoanimation 0.5s linear infinite;
+  animation: dinoanimation 0.5s linear infinite;
 }
 
 @keyframes dinoanimation {
-    0%,
-    100% {
-        bottom: 30px;
-    }
-    45%,
-    55% {
-        bottom: 200px;
-    }
+  0%,
+  100% {
+    bottom: 30px;
+  }
+  45%,
+  55% {
+    bottom: 200px;
+  }
+}
+
+.block {
+  height: 85px;
+  width: 120px;
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  z-index: 1;
+}
+
+.block img {
+  height: 85px;
+  width: 120px;
+}
+
+.animateblock {
+  animation: blockanimation 2.5s linear infinite;
+}
+
+@keyframes blockanimation {
+  0% {
+    right: -10%;
+  }
+  100% {
+    right: 110%;
+  }
+}
+
+.road {
+  position: absolute;
+  bottom: 0%;
+}
+
+.road img {
+  height: 30px;
+  width: 3000px;
+}
+
+.animateroad {
+  animation: roadanimation 3.5s linear infinite;
+}
+
+@keyframes roadanimation {
+  0% {
+    right: -1500px;
+  }
+  100% {
+    right: 0px;
+  }
 }
