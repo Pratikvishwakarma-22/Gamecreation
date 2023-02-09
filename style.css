@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+.container {
+    width: 1200px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+#dino {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    z-index: 1;
+}
+
+#dino img {
+    height: 70px;
+    width: 70px;
+}
+
+.animatedino {
+    animation: dinoanimation 0.5s linear infinite;
+}
+
+@keyframes dinoanimation {
+    0%,
+    100% {
+        bottom: 30px;
+    }
+    45%,
+    55% {
+        bottom: 200px;
+    }
+}
