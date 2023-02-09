@@ -119,3 +119,12 @@ body {
     right: 0px;
   }
 }
+
+.score {
+  height: 30px;
+  width: 100px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.5em;
+}
